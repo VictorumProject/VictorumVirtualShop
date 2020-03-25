@@ -1,0 +1,9 @@
+main: me.victorum.vvs.VVS
+name: VictorumVirtualShop
+version: 1.0
+author: Juubes
+depend:
+- Victorum
+- VictorumWallMagic
+commands:
+   shop:
