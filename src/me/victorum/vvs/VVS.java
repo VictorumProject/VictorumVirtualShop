@@ -11,8 +11,9 @@ public class VVS extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		if (Bukkit.getPluginManager().isPluginEnabled("Victorum")) {
+		if (!Bukkit.getPluginManager().isPluginEnabled("Victorum")) {
 			this.setEnabled(false);
+			this.getLogger().warning("Can't enable plugin. Dependency Victorum not found.");
 			return;
 		}
 

@@ -3,18 +3,41 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.juubes.victorum</groupId>
+	<groupId>com.juubes</groupId>
 	<artifactId>vvs</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
+	<name>VictorumVirtualShop</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
 	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+			</plugin>
+		</plugins>
+
 		<sourceDirectory>src</sourceDirectory>
-		<defaultGoal>package</defaultGoal>
+		<defaultGoal>package install</defaultGoal>
+
+		<resources>
+			<resource>
+				<directory>res</directory>
+			</resource>
+		</resources>
 	</build>
 
 	<dependencies>

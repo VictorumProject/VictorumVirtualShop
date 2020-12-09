@@ -21,6 +21,7 @@ public class ShopCommand implements CommandExecutor {
 
 		Player p = (Player) sender;
 		p.openInventory(pl.getMainMenu());
+		p.sendMessage("§ePaina oikeaa klikkiä myydäksesi ja vasenta ostaaksesi.");
 		return true;
 	}
 }

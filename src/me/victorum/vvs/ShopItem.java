@@ -1,5 +1,6 @@
 package me.victorum.vvs;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class ShopItem extends ItemStack {
@@ -16,6 +17,12 @@ public class ShopItem extends ItemStack {
 		super(item);
 		this.singleBuyPrice = buyPrice;
 		this.singleSellPrice = sellPrice;
+	}
+
+	public ShopItem(Material mat, long price) {
+		super(mat);
+		this.singleBuyPrice = price;
+		this.singleSellPrice = price;
 	}
 
 	public long getBuyPrice(int amount) {

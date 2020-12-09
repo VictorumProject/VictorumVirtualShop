@@ -29,9 +29,9 @@ public class ItemStackBuilder {
 		this.item = new ItemStack(mat, amount, data);
 	}
 
-	public ItemStackBuilder hideEnchantments(boolean b) {
+	public ItemStackBuilder hideEnchantments(boolean hide) {
 		ItemMeta meta = item.getItemMeta();
-		if (b)
+		if (hide)
 			meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		else
 			meta.removeItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -77,5 +77,10 @@ public class ItemStackBuilder {
 
 	public ItemStackBuilder fakeEnchant() {
 		return this.enchant(Enchantment.PROTECTION_FALL, 1).hideEnchantments(true);
+	}
+
+	public ItemStackBuilder setAmount(int amount) {
+		item.setAmount(amount);
+		return this;
 	}
 }
